@@ -16,7 +16,7 @@ const EtudiantListComponent = {
                 <nav aria-label="Page navigation">
                   <ul class="pagination">
                     <li class="page-item" :class="{disabled: data.current_page==1}">
-                      <a class="page-link" href="#" aria-label="Précédent">
+                      <a class="page-link" @click="paginate(data.current_page-1)" aria-label="Précédent">
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Précédent</span>
                       </a>
@@ -25,7 +25,7 @@ const EtudiantListComponent = {
                         <a class="page-link" @click="paginate(index)">{{index}}</a>
                     </li>
                     <li class="page-item"  :class="{disabled: data.current_page==data.last_page}">
-                      <a class="page-link" href="#" aria-label="Suivant">
+                      <a class="page-link" @click="paginate(data.current_page+1)" aria-label="Suivant">
                         <span aria-hidden="true">&raquo;</span>
                         <span class="sr-only">Suivant</span>
                       </a>
